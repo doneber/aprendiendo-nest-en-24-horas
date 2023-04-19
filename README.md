@@ -141,6 +141,11 @@ Ahora debemos configurar las entidades (`task.entity.ts`) usando el orm
 
 También debemos agregar typeorm al modulo principal y configurar la conexión a la base de datos (como el nombre de usuario, contraseña, tipo de base dedatos).
 
+### Create
+Para crear una nueva tarea y guardarla en la base de datos, debemos usar el servicio de typeorm, `getRepository` y el método `save`.
+
+Mucho ojo en configurar tanto el controlador, el modulo y el servicio de las tareas.
+
 ## Test
 
 ```bash

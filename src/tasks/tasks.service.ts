@@ -2,9 +2,17 @@ import { Injectable } from '@nestjs/common';
 import { Task } from './task.entity';
 import { TaskStatus } from './task.entity';
 import { v4 } from 'uuid';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { CreateTaskDto } from './dto/task.dto';
 
 @Injectable()
 export class TasksService {
+  constructor(
+    @InjectRepository(Task)
+    private taskRepository: Repository<Task>,
+  ) {}
+
   tasks: Task[] = [
     {
       id: '1',
@@ -24,15 +32,10 @@ export class TasksService {
     return this.tasks;
   }
 
-  create(title: string, description: string) {
-    const task: Task = {
-      id: v4(),
-      title,
-      description,
-      status: TaskStatus.TODO,
-    };
-    this.tasks.push(task);
-    return task;
+  create(task: CreateTaskDto) {
+    const newTask = this.taskRepository.create(task);
+    this.taskRepository.save(newTask);
+    return newTask;
   }
 
   delete(id: string) {
