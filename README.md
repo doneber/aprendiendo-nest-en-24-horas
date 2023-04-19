@@ -99,6 +99,17 @@ Por ejemplo podemos crear algo así un archivo `task.entity.ts` donde estará la
 
 Estas entidades nos pueden ayudar si usamos un ORM (Object Relational Mapping) como [TypeORM](https://typeorm.io/#/).
 
+## CRUD
+
+Para hacer el crud simplemente es agregar metodos en el controlador y llamar a los servicios.
+Para `tasks.services.ts` un método llamado `getAll` que devuelva todas las tareas, y en el controlador agregar un método llamado `getAll` que llame a ese servicio.
+
+También para generar el `id` podemos usar la librería [uuid](https://www.npmjs.com/package/uuid).
+
+Para probarlo podemos usar [Thunder Client](https://www.thunderclient.com/)
+
+```ts
+
 
 ### Test
 
