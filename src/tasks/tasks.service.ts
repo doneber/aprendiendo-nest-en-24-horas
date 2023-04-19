@@ -40,4 +40,13 @@ export class TasksService {
     this.tasks = this.tasks.filter((task) => task.id !== id);
     return task;
   }
+
+  update(id: string, taskUpdated: any): Task {
+    let taskToUpdate = this.tasks.find((task) => task.id === id);
+    taskToUpdate = { ...taskToUpdate, ...taskUpdated };
+    this.tasks = this.tasks.map((task) =>
+      task.id === id ? taskToUpdate : task,
+    );
+    return taskToUpdate;
+  }
 }

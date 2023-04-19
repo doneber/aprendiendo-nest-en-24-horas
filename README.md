@@ -115,6 +115,11 @@ También creamos un DTO que es un objeto que se usa para pasar los datos de un l
 
 Para el delete usamos el `id` de la tarea pasado por parametro, la ruta queda así: `/tasks/:id`.
 
+### Update
+Para actualizar una tarea usaremos @Params() y @Body() para obtener el id y los datos a actualizar de la tarea.
+En este caso usaremos el verbo HTTP `PATCH` para actualizar una tarea.
+También agregamos el DTO para actualizar la tarea (`UpdateTaskDto`).
+
 ### Test
 
 ```bash
