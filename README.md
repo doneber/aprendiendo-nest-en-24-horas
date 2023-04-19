@@ -69,7 +69,7 @@ En un archivo *name.module.ts* podemos definir un módulo, que puede tener:
 - Controladores: Sirve para configurar las peticiones que se pueden hacer a la aplicación y configurar (GET, POST, DELETE, etc) .
 - Proveedores: Aquí estan las funciones o servicios que podrían comunicarse con la base de datos.
 
-![https://docs.nestjs.com/assets/Modules_1.png](https://docs.nestjs.com/assets/Modules_1.png)
+<img alt="modulos en nest" width="600" src="https://docs.nestjs.com/assets/Modules_1.png">
 
 Para crear un módulo, podemos usar el comando:
 
@@ -123,6 +123,23 @@ También agregamos el DTO para actualizar la tarea (`UpdateTaskDto`).
 ## Validaciones
 
 Para esto usaremos una libreria recomendada en por la documentación de NestJs, [class-validator](https://docs.nestjs.com/techniques/validation)
+
+## Base de Datos
+Es hora de agregar persistencia de los datos. Aquí vamos a usar [TypeORM](https://typeorm.io/#/).
+
+Para esto bamos a usar la base de datos PostgreSQL.
+
+Y para instalar todo esto, con ayuda de la [documentación](https://docs.nestjs.com/techniques/database), usamos:
+
+```bash
+npm install --save @nestjs/typeorm typeorm pg
+```
+
+Antes de continuar debemos tener corriendo nuestra base de datos en nuestra maquina, instalandolo o usando docker para correrlo en un contenedor.
+
+Ahora debemos configurar las entidades (`task.entity.ts`) usando el orm
+
+También debemos agregar typeorm al modulo principal y configurar la conexión a la base de datos (como el nombre de usuario, contraseña, tipo de base dedatos).
 
 ## Test
 
