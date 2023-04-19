@@ -120,7 +120,11 @@ Para actualizar una tarea usaremos @Params() y @Body() para obtener el id y los 
 En este caso usaremos el verbo HTTP `PATCH` para actualizar una tarea.
 También agregamos el DTO para actualizar la tarea (`UpdateTaskDto`).
 
-### Test
+## Validaciones
+
+Para esto usaremos una libreria recomendada en por la documentación de NestJs, [class-validator](https://docs.nestjs.com/techniques/validation)
+
+## Test
 
 ```bash
 $ npm run test # unit tests
