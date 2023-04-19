@@ -111,9 +111,9 @@ Para crear una nueva tarea, al asignarle un `id` podemos usar la librería [uuid
 
 También creamos un DTO que es un objeto que se usa para pasar los datos de un lado a otro, en este caso de la petición al servicio.
 
+### Delete
 
-```ts
-
+Para el delete usamos el `id` de la tarea pasado por parametro, la ruta queda así: `/tasks/:id`.
 
 ### Test
 
